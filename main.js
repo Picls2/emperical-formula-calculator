@@ -1,0 +1,1 @@
+import pTable from './periodictable.json' assert {type: 'json'};
