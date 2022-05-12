@@ -2,6 +2,7 @@ body {
     display: flex;
     align-content: center;
     justify-content: center;
+    background-color: lightblue;
 }
 
 #container{
@@ -21,8 +22,9 @@ h1{
     height: 2rem;
     grid-template-rows: [row1-start] 50% [row2-start] auto [end];
     row-gap: 50%;
+    column-gap: 2%;
     grid-template-columns: repeat(8, 1fr);
-    width: 60%;
+    width: 70%;
     align-self: center;
     margin-top: 5%;
 }
