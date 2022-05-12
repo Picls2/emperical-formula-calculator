@@ -14,11 +14,15 @@ let mass1;
 let mass2;
 let mass3;
 let mass4;
+let mole1;
+let mole2;
+let mole3;
+let mole4;
 
-function convertToPercent(percent, store){
+function convertToMass(percent, store){
     store = percent.value * 0.01 * mass.value;
 }
 
-submit.onclick = () => {
-    
+function moleCalculation(eleMass, moleMass, store){
+    store = eleMass / moleMass;
 }
