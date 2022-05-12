@@ -4,3 +4,4 @@ node_modules/
 .gitattributes
 package.json
 package-lock.json
+.gitignore
