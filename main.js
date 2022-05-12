@@ -20,9 +20,18 @@ function convertToMass(percent){
 }
 
 function moleCalculation(eleMass, ele, store){
-    return eleMass / pTable[ele.value]["mass"];
+    store = eleMass / pTable[ele.value]["mass"];
+}
+
+function ratioCalculation(){
+    moleCalculation(convertToMass(per1), elm1, mole1);
+    moleCalculation(convertToMass(per2), elm1, mole2);
+    moleCalculation(convertToMass(per3), elm1, mole3);
+    moleCalculation(convertToMass(per4), elm1, mole4);
+    let min = Math.min(mole1, mole2, mole3, mole4);
+    return min;
 }
 
 submit.onclick = () => {
-    alert(moleCalculation(convertToMass(per1), elm1, mole1))
+    console.log(ratioCalculation());
 }
