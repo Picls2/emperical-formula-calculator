@@ -28,15 +28,34 @@ function moleCalculation(eleMass, ele){
 }
 
 function ratioCalculation(){
-    mole1 = moleCalculation(convertToMass(per1), elm1);
-    mole2 = moleCalculation(convertToMass(per2), elm2);
-    mole3 = moleCalculation(convertToMass(per3), elm3);
-    mole4 = moleCalculation(convertToMass(per4), elm4);
-    let min = Math.min(mole1, mole2, mole3, mole4);
-    ratio1 = mole1 / min;
-    ratio2 = mole2 / min;
-    ratio3 = mole3 / min;
-    ratio4 = mole4 / min;
+    let arr = []
+    if(per1.value > 0){
+        mole1 = moleCalculation(convertToMass(per1), elm1);
+        arr.push(mole1);
+    }
+    if(per2.value > 0){
+        mole2 = moleCalculation(convertToMass(per2), elm2);
+        arr.push(mole2);
+    }
+    if(per3.value > 0){
+        mole3 = moleCalculation(convertToMass(per3), elm3);
+        arr.push(mole3);
+    }if(per4.value > 0){
+        mole4 = moleCalculation(convertToMass(per4), elm4);
+        arr.push(mole4);
+    }
+    let min = Math.min(...arr);
+    if(per1.value > 0){
+        ratio1 = Math.round(mole1 / min * 100) / 100;
+    }
+    if(per2.value > 0){
+        ratio2 = Math.round(mole2 / min * 100) / 100;
+    }
+    if(per3.value > 0){
+        ratio3 = Math.round(mole3 / min * 100) / 100;
+    }if(per4.value > 0){
+        ratio4 = Math.round(mole4 / min * 100) / 100;
+    }
 }
 
 submit.onclick = () => {
