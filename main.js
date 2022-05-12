@@ -14,24 +14,32 @@ let mole1;
 let mole2;
 let mole3;
 let mole4;
+let ratio1;
+let ratio2;
+let ratio3;
+let ratio4;
 
 function convertToMass(percent){
     return percent.value * 0.01 * mass.value;
 }
 
-function moleCalculation(eleMass, ele, store){
-    store = eleMass / pTable[ele.value]["mass"];
+function moleCalculation(eleMass, ele){
+    return eleMass / pTable[ele.value]["mass"];
 }
 
 function ratioCalculation(){
-    moleCalculation(convertToMass(per1), elm1, mole1);
-    moleCalculation(convertToMass(per2), elm1, mole2);
-    moleCalculation(convertToMass(per3), elm1, mole3);
-    moleCalculation(convertToMass(per4), elm1, mole4);
+    mole1 = moleCalculation(convertToMass(per1), elm1);
+    mole2 = moleCalculation(convertToMass(per2), elm2);
+    mole3 = moleCalculation(convertToMass(per3), elm3);
+    mole4 = moleCalculation(convertToMass(per4), elm4);
     let min = Math.min(mole1, mole2, mole3, mole4);
-    return min;
+    ratio1 = mole1 / min;
+    ratio2 = mole2 / min;
+    ratio3 = mole3 / min;
+    ratio4 = mole4 / min;
 }
 
 submit.onclick = () => {
-    console.log(ratioCalculation());
+    ratioCalculation();
+    alert(`${ratio1} ${ratio2} ${ratio3} ${ratio4}`);
 }
