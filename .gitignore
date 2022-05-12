@@ -1,7 +1,7 @@
 node_modules/
-.eslintrc.js
 .vscode/
-.gitattributes
+.eslintrc.js
 package.json
 package-lock.json
+.gitattributes
 .gitignore
