@@ -1,0 +1,44 @@
+body {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5% 0% 0% 0%;
+}
+
+h1{
+    align-self: center;
+}
+
+#inputContainer {
+    display: grid;
+    height: 2rem;
+    grid-template-rows: [row1-start] 50% [row2-start] auto [end];
+    row-gap: 50%;
+    grid-template-columns: repeat(8, 1fr);
+    width: 60%;
+    align-self: center;
+    margin-top: 5%;
+}
+
+.ele{
+    width: 100%
+}
+
+.per{
+    width: 100%;
+}
+
+#submit{
+    grid-column-start: 1;
+    grid-column-end: 10;
+    width: 10%;
+    align-self: center;
+    justify-self: center;
+}
