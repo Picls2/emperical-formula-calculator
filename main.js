@@ -10,19 +10,19 @@ let per3 = document.getElementById("per3");
 let per4 = document.getElementById("per4");
 let mass = document.getElementById("mass");
 const submit = document.getElementById("submit");
-let mass1;
-let mass2;
-let mass3;
-let mass4;
 let mole1;
 let mole2;
 let mole3;
 let mole4;
 
-function convertToMass(percent, store){
-    store = percent.value * 0.01 * mass.value;
+function convertToMass(percent){
+    return percent.value * 0.01 * mass.value;
 }
 
-function moleCalculation(eleMass, moleMass, store){
-    store = eleMass / moleMass;
+function moleCalculation(eleMass, ele, store){
+    return eleMass / pTable[ele.value]["mass"];
+}
+
+submit.onclick = () => {
+    alert(moleCalculation(convertToMass(per1), elm1, mole1))
 }
