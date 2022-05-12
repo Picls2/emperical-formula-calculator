@@ -19,8 +19,8 @@ h1{
 
 #inputContainer {
     display: grid;
-    height: 2rem;
-    grid-template-rows: [row1-start] 50% [row2-start] auto [end];
+    height: 3rem;
+    grid-template-rows: [row1-start] 33% [row2-start] 33% [row3-start] auto [end];
     row-gap: 50%;
     column-gap: 2%;
     grid-template-columns: repeat(8, 1fr);
@@ -29,15 +29,21 @@ h1{
     margin-top: 5%;
 }
 
-.ele{
+.eleInput{
     width: 100%
 }
 
-.per{
-    width: 100%;
+#mass{
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 10;
+    width: 10%;
+    align-self: center;
+    justify-self: center;
 }
 
 #submit{
+    grid-row: 3;
     grid-column-start: 1;
     grid-column-end: 10;
     width: 10%;

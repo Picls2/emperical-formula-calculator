@@ -8,3 +8,4 @@ let per1 = document.getElementById("per1").value;
 let per2 = document.getElementById("per2").value;
 let per3 = document.getElementById("per3").value;
 let per4 = document.getElementById("per4").value;
+let mass = document.getElementById("mass").value;
