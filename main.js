@@ -11,6 +11,8 @@ let per4 = document.getElementById("per4");
 let mass = document.getElementById("mass");
 const submit = document.getElementById("submit");
 let answerDiv = document.getElementById("answer");
+let PercentDiv = document.getElementById("convertPercent");
+let molesDiv = document.getElementById("convertMoles");
 let mole1;
 let mole2;
 let mole3;
@@ -73,5 +75,16 @@ function ratioCalculation(){
 
 submit.onclick = () => {
     ratioCalculation();
+     PercentDiv.innerHTML = 
+     `${elm1.value != "" ? elm1.value : ""} ${per1.value > 0 ? convertToMass(per1) : ""} <br />
+     ${elm2.value != "" ? elm2.value : ""} ${per2.value > 0 ? convertToMass(per2) : ""} <br />
+     ${elm3.value != "" ? elm3.value : ""} ${per3.value > 0 ? convertToMass(per3) : ""} <br />
+     ${elm4.value != "" ? elm4.value : ""} ${per4.value > 0 ? convertToMass(per4) : ""}`
+     molesDiv.innerHTML = 
+     `${elm1.value != "" ? elm1.value : ""} ${per1.value > 0 ? moleCalculation(convertToMass(per1), elm1) : ""} <br />
+     ${elm2.value != "" ? elm2.value : ""} ${per2.value > 0 ? moleCalculation(convertToMass(per2), elm2) : ""} <br />
+     ${elm3.value != "" ? elm3.value : ""} ${per3.value > 0 ? moleCalculation(convertToMass(per3), elm3) : ""} <br />
+     ${elm4.value != "" ? elm4.value : ""} ${per4.value > 0 ? moleCalculation(convertToMass(per4), elm4) : ""}`
+
     answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${ratio1 > 1 ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${ratio2 > 1 ? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${ratio3 > 1 ? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${ratio4 > 1 ? ratio4 : ""}</sub>`;
 }

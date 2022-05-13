@@ -63,3 +63,10 @@ h1{
     justify-self: center;
     padding-top: 5%;
 }
+
+.convert{
+    justify-self: center;
+    align-self: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
