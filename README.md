@@ -1,2 +1,2 @@
-# hydration-calculator
-A calculator to figure out hydrate weight
+# emperical-formula-calculator
+A calculator to convert percent mass to an emperical formula
