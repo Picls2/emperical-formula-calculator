@@ -73,18 +73,18 @@ function ratioCalculation(){
     }
 }
 
-submit.onclick = () => {
+submit.click = () => {
     ratioCalculation();
      PercentDiv.innerHTML = 
-     `${elm1.value != "" ? elm1.value : ""} ${per1.value > 0 ? convertToMass(per1) : ""} <br />
-     ${elm2.value != "" ? elm2.value : ""} ${per2.value > 0 ? convertToMass(per2) : ""} <br />
-     ${elm3.value != "" ? elm3.value : ""} ${per3.value > 0 ? convertToMass(per3) : ""} <br />
-     ${elm4.value != "" ? elm4.value : ""} ${per4.value > 0 ? convertToMass(per4) : ""}`
+     `${elm1.value != "" ? elm1.value + ": ": ""} ${per1.value > 0 ? convertToMass(per1) + "g" : ""} <br />
+     ${elm2.value != "" ? elm2.value  + ": " : ""} ${per2.value > 0 ? convertToMass(per2) + "g" : ""} <br />
+     ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? convertToMass(per3) + "g" : ""} <br />
+     ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? convertToMass(per4) + "g" : ""}`
      molesDiv.innerHTML = 
-     `${elm1.value != "" ? elm1.value : ""} ${per1.value > 0 ? moleCalculation(convertToMass(per1), elm1) : ""} <br />
-     ${elm2.value != "" ? elm2.value : ""} ${per2.value > 0 ? moleCalculation(convertToMass(per2), elm2) : ""} <br />
-     ${elm3.value != "" ? elm3.value : ""} ${per3.value > 0 ? moleCalculation(convertToMass(per3), elm3) : ""} <br />
-     ${elm4.value != "" ? elm4.value : ""} ${per4.value > 0 ? moleCalculation(convertToMass(per4), elm4) : ""}`
+     `${elm1.value != "" ? elm1.value + ": " : ""} ${per1.value > 0 ? moleCalculation(convertToMass(per1), elm1) + " moles" : ""} <br />
+     ${elm2.value != "" ? elm2.value + ": " : ""} ${per2.value > 0 ? moleCalculation(convertToMass(per2), elm2) + " moles" : ""} <br />
+     ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? moleCalculation(convertToMass(per3), elm3) + " moles" : ""} <br />
+     ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? moleCalculation(convertToMass(per4), elm4) + " moles" : ""}`
 
     answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${ratio1 > 1 ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${ratio2 > 1 ? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${ratio3 > 1 ? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${ratio4 > 1 ? ratio4 : ""}</sub>`;
 }
