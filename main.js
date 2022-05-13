@@ -73,5 +73,5 @@ function ratioCalculation(){
 
 submit.onclick = () => {
     ratioCalculation();
-    answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${per1.value > 0 ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${per2.value > 0 ? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${per3.value > 0 ? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${per4.value > 0 ? ratio4 : ""}</sub>`;
+    answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${ratio1 > 1 ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${ratio2 > 1 ? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${ratio3 > 1 ? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${ratio4 > 1 ? ratio4 : ""}</sub>`;
 }
