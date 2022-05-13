@@ -73,7 +73,7 @@ function ratioCalculation(){
     }
 }
 
-submit.click = () => {
+submit.onclick = () => {
     ratioCalculation();
      PercentDiv.innerHTML = 
      `${elm1.value != "" ? elm1.value + ": ": ""} ${per1.value > 0 ? convertToMass(per1) + "g" : ""} <br />
@@ -86,5 +86,5 @@ submit.click = () => {
      ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? moleCalculation(convertToMass(per3), elm3) + " moles" : ""} <br />
      ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? moleCalculation(convertToMass(per4), elm4) + " moles" : ""}`
 
-    answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${ratio1 > 1 ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${ratio2 > 1 ? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${ratio3 > 1 ? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${ratio4 > 1 ? ratio4 : ""}</sub>`;
+    answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${ratio1 == 1 || ratio1 == 0 ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${ratio2  == 1 || ratio2 == 0? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${ratio3  == 1 || ratio3 == 0 ? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${ratio4  == 1 || ratio4 == 0 ? ratio4 : ""}</sub>`;
 }
