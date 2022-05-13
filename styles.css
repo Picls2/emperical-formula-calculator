@@ -57,3 +57,9 @@ h1{
     justify-self: center;
     align-self: center;
 }
+
+#info{
+    align-self: center;
+    justify-self: center;
+    padding-top: 5%;
+}
