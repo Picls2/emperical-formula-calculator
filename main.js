@@ -10,6 +10,7 @@ let per3 = document.getElementById("per3");
 let per4 = document.getElementById("per4");
 let mass = document.getElementById("mass");
 const submit = document.getElementById("submit");
+let answerDiv = document.getElementById("answer");
 let mole1;
 let mole2;
 let mole3;
@@ -47,18 +48,30 @@ function ratioCalculation(){
     let min = Math.min(...arr);
     if(per1.value > 0){
         ratio1 = Math.round(mole1 / min * 100) / 100;
+        if(ratio1 - Math.round(ratio1) <= 0.1){
+            ratio1 = Math.round(ratio1);
+        }
     }
     if(per2.value > 0){
         ratio2 = Math.round(mole2 / min * 100) / 100;
+        if(ratio2 - Math.round(ratio2) <= 0.1){
+            ratio2 = Math.round(ratio2);
+        }
     }
     if(per3.value > 0){
         ratio3 = Math.round(mole3 / min * 100) / 100;
+        if(ratio3 - Math.round(ratio3) <= 0.1){
+            ratio3 = Math.round(ratio3);
+        }
     }if(per4.value > 0){
         ratio4 = Math.round(mole4 / min * 100) / 100;
+        if(ratio4 - Math.round(ratio4) <= 0.1){
+            ratio4 = Math.round(ratio4);
+        }
     }
 }
 
 submit.onclick = () => {
     ratioCalculation();
-    alert(`${ratio1} ${ratio2} ${ratio3} ${ratio4}`);
+    answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${per1.value > 0 ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${per2.value > 0 ? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${per3.value > 0 ? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${per4.value > 0 ? ratio4 : ""}</sub>`;
 }

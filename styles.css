@@ -9,6 +9,7 @@ body {
     display: flex;
     align-content: center;
     justify-content: center;
+    align-content: space-around;
     flex-direction: column;
     padding: 5% 0% 0% 0%;
 }
@@ -19,7 +20,7 @@ h1{
 
 #inputContainer {
     display: grid;
-    height: 3rem;
+    height: 4rem;
     grid-template-rows: [row1-start] 33% [row2-start] 33% [row3-start] auto [end];
     row-gap: 50%;
     column-gap: 2%;
@@ -27,6 +28,7 @@ h1{
     width: 70%;
     align-self: center;
     margin-top: 5%;
+    margin-bottom: 6%;
 }
 
 .eleInput{
@@ -49,4 +51,9 @@ h1{
     width: 10%;
     align-self: center;
     justify-self: center;
+}
+
+#answer{
+    justify-self: center;
+    align-self: center;
 }
