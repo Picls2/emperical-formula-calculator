@@ -13,6 +13,7 @@ const submit = document.getElementById("submit");
 let answerDiv = document.getElementById("answer");
 let PercentDiv = document.getElementById("convertPercent");
 let molesDiv = document.getElementById("convertMoles");
+let ratioDiv = document.getElementById("convertRatio");
 let mole1;
 let mole2;
 let mole3;
@@ -21,13 +22,14 @@ let ratio1;
 let ratio2;
 let ratio3;
 let ratio4;
+let min;
 
 function convertToMass(percent){
     return percent.value * 0.01 * mass.value;
 }
 
 function moleCalculation(eleMass, ele){
-    return eleMass / pTable[ele.value]["mass"];
+    return Math.round(eleMass / pTable[ele.value]["mass"] * 10000) / 10000;
 }
 
 function ratioCalculation(){
@@ -47,7 +49,7 @@ function ratioCalculation(){
         mole4 = moleCalculation(convertToMass(per4), elm4);
         arr.push(mole4);
     }
-    let min = Math.min(...arr);
+    min = Math.min(...arr);
     if(per1.value > 0){
         ratio1 = Math.round(mole1 / min * 100) / 100;
         if(ratio1 - Math.round(ratio1) <= 0.1){
@@ -81,10 +83,15 @@ submit.onclick = () => {
      ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? per3.value + " * " + 0.01 + " * " + mass.value + " = " + convertToMass(per3) + "g" : ""} <br />
      ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? per4.value + " * " + 0.01 + " * " + mass.value + " = " + convertToMass(per4) + "g" : ""}`
      molesDiv.innerHTML = 
-     `${elm1.value != "" ? elm1.value + ": " : ""} ${per1.value > 0 ? moleCalculation(convertToMass(per1), elm1) + " moles" : ""} <br />
-     ${elm2.value != "" ? elm2.value + ": " : ""} ${per2.value > 0 ? moleCalculation(convertToMass(per2), elm2) + " moles" : ""} <br />
-     ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? moleCalculation(convertToMass(per3), elm3) + " moles" : ""} <br />
-     ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? moleCalculation(convertToMass(per4), elm4) + " moles" : ""}`
-
-    answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${ratio1 != 1 || ratio1 != 0 ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${ratio2  != 1 || ratio2 != 0? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${ratio3  != 1 || ratio3 != 0 ? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${ratio4  != 1 || ratio4 != 0 ? ratio4 : ""}</sub>`;
+     `${elm1.value != "" ? elm1.value + ": " : ""} ${per1.value > 0 ? convertToMass(per1) + " / " + pTable[elm1.value]["mass"] + " = " + moleCalculation(convertToMass(per1), elm1) + " moles" : ""} <br />
+     ${elm2.value != "" ? elm2.value + ": " : ""} ${per2.value > 0 ? convertToMass(per2) + " / " + pTable[elm2.value]["mass"] + " = " +  moleCalculation(convertToMass(per2), elm2) + " moles" : ""} <br />
+     ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? convertToMass(per3) + " / " + pTable[elm3.value]["mass"] + " = " +  moleCalculation(convertToMass(per3), elm3) + " moles" : ""} <br />
+     ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? convertToMass(per4) + " / " + pTable[elm4.value]["mass"] + " = " +  moleCalculation(convertToMass(per4), elm4) + " moles" : ""}`
+    ratioDiv.innerHTML = 
+    `${elm1.value != "" ? elm1.value + ": " : ""} ${per1.value > 0 ? mole1 + " / " + min + " = " + ratio1 : ""} <br />
+    ${elm2.value != "" ? elm2.value + ": " : ""} ${per2.value > 0 ? mole2 + " / " + min + " = " + ratio2 : ""} <br />
+    ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? mole3 + " / " + min + " = " + ratio3 : ""} <br />
+    ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? mole4 + " / " + min + " = " + ratio4 : ""} <br />
+    `
+    answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${ratio1 != 1 && ratio1 != 0  && ratio1 != undefined ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${ratio2  != 1 && ratio2 != 0  && ratio2 != undefined ? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${ratio3  != 1 && ratio3 != 0  && ratio3 != undefined? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${ratio4  != 1 && ratio4 != 0 && ratio4 != undefined ? ratio4 : ""}</sub>`;
 }
