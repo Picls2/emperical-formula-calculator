@@ -75,7 +75,7 @@ function ratioCalculation(){
     }
 }
 
-submit.ontouchstart = () => {
+submit.onmousedown = () => {
     ratioCalculation();
      PercentDiv.innerHTML = 
      `${elm1.value != "" ? elm1.value + ": ": ""} ${per1.value > 0 ? per1.value + " * " +  0.01 + " * " + mass.value + " = " + convertToMass(per1) + "g" : ""} <br />
