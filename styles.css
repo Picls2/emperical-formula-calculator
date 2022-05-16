@@ -52,7 +52,7 @@ h1{
     grid-row: 3;
     grid-column-start: 1;
     grid-column-end: 10;
-    width: 10%;
+    width: 5rem;
     align-self: center;
     justify-self: center;
 }
@@ -71,6 +71,6 @@ h1{
 .convert{
     justify-self: center;
     align-self: center;
-    padding-top: 2%;
-    padding-bottom: 2%;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
