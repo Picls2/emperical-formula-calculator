@@ -3,6 +3,7 @@ body {
     align-content: center;
     justify-content: center;
     background-color: lightblue;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 #container{
@@ -32,7 +33,10 @@ h1{
 }
 
 .eleInput{
-    width: 100%
+    width: 100%;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: lightblue;
 }
 
 #mass{
