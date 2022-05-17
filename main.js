@@ -77,21 +77,25 @@ function ratioCalculation(){
 
 submit.onclick = () => {
     ratioCalculation();
+    alert("hi");
      PercentDiv.innerHTML = 
      `${elm1.value != "" ? elm1.value + ": ": ""} ${per1.value > 0 ? per1.value + " * " +  0.01 + " * " + mass.value + " = " + convertToMass(per1) + "g" : ""} <br />
      ${elm2.value != "" ? elm2.value  + ": " : ""} ${per2.value > 0 ? per2.value + " * " + 0.01 + " * " + mass.value + " = " + convertToMass(per2) + "g" : ""} <br />
      ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? per3.value + " * " + 0.01 + " * " + mass.value + " = " + convertToMass(per3) + "g" : ""} <br />
      ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? per4.value + " * " + 0.01 + " * " + mass.value + " = " + convertToMass(per4) + "g" : ""}`
+     alert("hi2");
      molesDiv.innerHTML = 
      `${elm1.value != "" ? elm1.value + ": " : ""} ${per1.value > 0 ? convertToMass(per1) + " / " + pTable[elm1.value]["mass"] + " = " + moleCalculation(convertToMass(per1), elm1) + " moles" : ""} <br />
      ${elm2.value != "" ? elm2.value + ": " : ""} ${per2.value > 0 ? convertToMass(per2) + " / " + pTable[elm2.value]["mass"] + " = " +  moleCalculation(convertToMass(per2), elm2) + " moles" : ""} <br />
      ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? convertToMass(per3) + " / " + pTable[elm3.value]["mass"] + " = " +  moleCalculation(convertToMass(per3), elm3) + " moles" : ""} <br />
      ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? convertToMass(per4) + " / " + pTable[elm4.value]["mass"] + " = " +  moleCalculation(convertToMass(per4), elm4) + " moles" : ""}`
+     alert("hi3");
     ratioDiv.innerHTML = 
     `${elm1.value != "" ? elm1.value + ": " : ""} ${per1.value > 0 ? mole1 + " / " + min + " = " + ratio1 : ""} <br />
     ${elm2.value != "" ? elm2.value + ": " : ""} ${per2.value > 0 ? mole2 + " / " + min + " = " + ratio2 : ""} <br />
     ${elm3.value != "" ? elm3.value + ": " : ""} ${per3.value > 0 ? mole3 + " / " + min + " = " + ratio3 : ""} <br />
     ${elm4.value != "" ? elm4.value + ": " : ""} ${per4.value > 0 ? mole4 + " / " + min + " = " + ratio4 : ""} <br />
     `
+    alert("hi4");
     answerDiv.innerHTML = `Answer: ${elm1.value != "" ? elm1.value : ""}<sub>${ratio1 != 1 && ratio1 != 0  && ratio1 != undefined ? ratio1 : ""}</sub>${elm2.value != "" ? elm2.value : ""}<sub>${ratio2  != 1 && ratio2 != 0  && ratio2 != undefined ? ratio2 : ""}</sub>${elm3.value != "" ? elm3.value : ""}<sub>${ratio3  != 1 && ratio3 != 0  && ratio3 != undefined? ratio3 : ""}</sub>${elm4.value != "" ? elm4.value : ""}<sub>${ratio4  != 1 && ratio4 != 0 && ratio4 != undefined ? ratio4 : ""}</sub>`;
 }
