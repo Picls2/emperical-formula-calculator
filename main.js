@@ -76,7 +76,6 @@ function ratioCalculation(){
 }
 
 submit.onclick = () => {
-    alert(mass);
     ratioCalculation();
      PercentDiv.innerHTML = 
      `${elm1.value != "" ? elm1.value + ": ": ""} ${per1.value > 0 ? per1.value + " * " +  0.01 + " * " + mass.value + " = " + convertToMass(per1) + "g" : ""} <br />
