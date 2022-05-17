@@ -81,7 +81,7 @@ submit.onclick = () => {
             ratioCalculation();
         }
         else{
-            setTimeout(waitForElement, 250);
+            setTimeout(waitForElement(), 250);
         }
     }
      PercentDiv.innerHTML = 
