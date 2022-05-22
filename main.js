@@ -76,16 +76,14 @@ function ratioCalculation(){
 }
 
 submit.onclick = () => {
-    submit.onclick = () => {
-        function waitForElement(){
-            if(typeof mass !== "undefined"){
-                ratioCalculation();
-            }
-            else{
-                setTimeout(waitForElement, 250);
-                alert("alkidfbdsfbdbfids");
-            }
+    function waitForElement(){
+        if(typeof mass !== "undefined"){
+            ratioCalculation();
         }
+        else{
+            setTimeout(() => {waitForElement()}, 250);
+        }
+    }
      PercentDiv.innerHTML = 
      `${elm1.value != "" ? elm1.value + ": ": ""} ${per1.value > 0 ? per1.value + " * " +  0.01 + " * " + mass.value + " = " + convertToMass(per1) + "g" : ""} <br />
      ${elm2.value != "" ? elm2.value  + ": " : ""} ${per2.value > 0 ? per2.value + " * " + 0.01 + " * " + mass.value + " = " + convertToMass(per2) + "g" : ""} <br />
