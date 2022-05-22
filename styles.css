@@ -2,7 +2,9 @@ body {
     display: flex;
     align-content: center;
     justify-content: center;
-    background-color: lightblue;
+    background: url("https://cdn.britannica.com/94/194294-138-B2CF7780/overview-capybara.jpg?w=800&h=450&c=crop");
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
